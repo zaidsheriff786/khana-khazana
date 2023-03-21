@@ -1,0 +1,31 @@
+{
+  "name": "khana-khazana",
+  "version": "1.0.0",
+  "description": "A Food ordering app",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Zaid Sheriff",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.21.0",
+    "babel-plugin-transform-remove-console": "^6.9.4",
+    "parcel": "^2.8.3",
+    "postcss": "^8.4.21",
+    "process": "^0.11.10",
+    "tailwindcss": "^3.2.7"
+  },
+  "dependencies": {
+    "@tailwindcss/line-clamp": "^0.4.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-icons": "^4.8.0",
+    "react-router-dom": "^6.8.2",
+    "react-type-animation": "^2.1.2"
+  },
+  "browserslist": [
+    "last 2 versions"
+  ]
+}

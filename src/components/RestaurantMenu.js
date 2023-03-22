@@ -22,7 +22,7 @@ const RestaurantMenu = () => {
     <Shimmer />
   ) : (
     <div className='my-2'>
-      <div className='w-full bg-gray-100  p-2 flex justify-center flex-wrap sm:flex-nowrap sm:p-4 sm:sticky top-0 left-0 z-20'>
+      <div className='w-full bg-gray-100  p-2 flex justify-center flex-wrap sm:justify-between sm:flex-nowrap sm:p-4 sm:sticky top-0 left-0 z-20 xl:justify-center'>
         <div className='flex'>
           <img
             loading='lazy'
@@ -55,7 +55,7 @@ const RestaurantMenu = () => {
             </div>
           </div>
         </div>
-        <fieldset className='border-dashed border-2 border-gray-600 lg:p-3 xl:m-6'>
+        <fieldset className='p-3 border-dashed border-2 border-gray-600 xl:m-6'>
           <legend className='font-semibold text-xs p-2 lg:text-base xl:text-[18px]'>
             OFFERS
           </legend>

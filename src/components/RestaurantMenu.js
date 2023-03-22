@@ -1,12 +1,17 @@
 import { useParams } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
 import { IMG_CDN_URL, MENU_IMG_CDN_URL } from '../constants';
 import Shimmer from './Shimmer';
 import useRestaurant from '../utils/useRestaurant';
 import { AiFillStar } from 'react-icons/ai';
+import { addItem, removeItem, getTotalAmount } from '../utils/cartSlice';
 
 const RestaurantMenu = () => {
   const { id } = useParams();
+  const dispatch = useDispatch();
+  const cartItems = useSelector((store) => store.cart.items);
   const restaurant = useRestaurant(id);
+
   const restaurantInfo = restaurant?.cards?.[0]?.card?.card?.info;
   const menuItems =
     restaurant?.cards?.[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards?.[1]?.card
@@ -17,6 +22,16 @@ const RestaurantMenu = () => {
       ?.card?.itemCards ||
     restaurant?.cards?.[3]?.groupedCard?.cardGroupMap?.REGULAR?.cards?.[2]?.card
       ?.card?.itemCards;
+
+  const handleAddItem = (item) => {
+    dispatch(addItem(item));
+    dispatch(getTotalAmount());
+  };
+
+  const handleRemoveItem = (item) => {
+    dispatch(removeItem(item));
+    dispatch(getTotalAmount());
+  };
 
   return !restaurant ? (
     <Shimmer />
@@ -123,9 +138,29 @@ const RestaurantMenu = () => {
                     />
                   )}
                 </div>
-                <button className='absolute top-[72px] left-[50%] translate-x-[-50%] px-4 py-2 bg-lime-500 hover:bg-lime-600 rounded text-sm text-white font-semibold'>
-                  ADD
-                </button>
+
+                <div className='absolute top-[72px] left-[50%] w-24 h-9 translate-x-[-50%] flex items-center justify-around bg-lime-500 hover:bg-lime-600 rounded text-sm text-white font-bold'>
+                  <button
+                    className='p-2'
+                    onClick={() =>
+                      cartItems[item?.card?.info?.id]?.quantity &&
+                      handleRemoveItem(item?.card?.info)
+                    }
+                  >
+                    <span>-</span>
+                  </button>
+                  <div>
+                    <span>
+                      {cartItems[item?.card?.info?.id]?.quantity || 0}
+                    </span>
+                  </div>
+                  <button
+                    className='p-2 z-30'
+                    onClick={() => handleAddItem(item?.card?.info)}
+                  >
+                    <span>+</span>
+                  </button>
+                </div>
               </div>
             </div>
           ))}

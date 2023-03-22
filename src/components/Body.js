@@ -13,7 +13,7 @@ const Body = () => {
 
   useEffect(() => {
     getRestaurants();
-  }, []);                   
+  }, []);
 
   async function getRestaurants() {
     const data = await fetch(RESTAURANTS_URL);
@@ -66,7 +66,7 @@ const Body = () => {
               ))}
             </div>
           ) : (
-            <div className='flex justify-center items-center font-mono text-lg h-[calc(100vh_-_80px_-_270px_-_48px_-_16px_-_72px)]'>
+            <div className='flex flex-1 justify-center items-center font-mono text-lg'>
               No restaurant found.
             </div>
           )}

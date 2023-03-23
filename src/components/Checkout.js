@@ -14,8 +14,7 @@ const CheckOut = () => {
           Delivery Charges - Free
         </h1>
         <h1 className='text-base mt-2 font-semibold'>
-          {' '}
-          Subtotal - ₹{cartAmount / 100}{' '}
+          Subtotal - ₹{cartAmount / 100}
         </h1>
       </div>
       <div>

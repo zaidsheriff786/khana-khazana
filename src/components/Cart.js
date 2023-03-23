@@ -12,8 +12,8 @@ const Cart = () => {
     dispatch(clearCart());
   };
   return (
-    <div className='my-2 mx-4 flex flex-1'>
-      <div className='w-[60%] mx-auto'>
+    <div className='my-2 mx-4 flex justify-center flex-1 flex-wrap sm:flex-nowrap'>
+      <div className='w-full sm:w-[50%]'>
         <div className='my-4 flex justify-center items-center'>
           <div className='text-center font-bold text-xl font-serif sm:text-3xl'>
             Cart Items - {totalQuantity}

@@ -32,8 +32,9 @@ const Body = () => {
         <>
           <div className='w-full h-12 flex justify-center mt-4'>
             <div className='w-[90%] pr-4 flex items-center border-solid border-2 border-[rgba(40,44,63,.3)] rounded-md lg:w-[60%]'>
-              <div className='flex-1 py-0 px-4'>
+              <div data-testid='search-btn' className='flex-1 py-0 px-4'>
                 <input
+                  data-testid='search-input'
                   type='text'
                   className='w-full h-full outline-0 border-none overflow-hidden text-ellipsis align-middle font-mono font-medium'
                   placeholder='Search for restaurants...'
@@ -55,7 +56,10 @@ const Body = () => {
           </div>
 
           {filteredRestaurants?.length > 0 ? (
-            <div className='flex flex-wrap justify-center max-w-[1200px] w-full my-0 mx-auto'>
+            <div
+              data-testid='restaurant-list'
+              className='flex flex-wrap justify-center max-w-[1200px] w-full my-0 mx-auto'
+            >
               {filteredRestaurants.map((restaurant) => (
                 <Link
                   to={`/restaurant/${restaurant.data.id}`}

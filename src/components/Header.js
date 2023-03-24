@@ -8,7 +8,7 @@ const Title = () => {
   return (
     <div>
       <Link to='/'>
-        <img className='h-16' src={logo} alt='logo' />
+        <img data-testid='logo' className='h-16' src={logo} alt='logo' />
       </Link>
     </div>
   );
@@ -48,7 +48,10 @@ const Header = () => {
                   to='/cart'
                 >
                   <MdShoppingCart fontSize='24px' />
-                  <span className='absolute top-[-8px] left-4 w-4 h-4 p-3 flex justify-center items-center rounded-full bg-lime-500 text-white text-xs'>
+                  <span
+                    data-testid='cart'
+                    className='absolute top-[-8px] left-4 w-4 h-4 p-3 flex justify-center items-center rounded-full bg-lime-500 text-white text-xs'
+                  >
                     {cartItems}
                   </span>
                 </Link>

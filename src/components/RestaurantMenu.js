@@ -88,7 +88,10 @@ const RestaurantMenu = () => {
       </div>
       <div className='m-2'>
         <h1 className='mb-2 text-2xl font-bold underline text-center'>Menu</h1>
-        <div className='flex flex-col max-w-[1200px] w-full mx-auto'>
+        <div
+          data-testid='menu'
+          className='flex flex-col max-w-[1200px] w-full mx-auto'
+        >
           {menuItems?.map((item, index) => (
             <div
               className='flex justify-between mb-6 p-4 rounded-md border-2 border-[#e7e9ed] shadow-[0_4px_8px_0_rgba(0,0,0,0.2)] hover:shadow-[0_8px_16px_0_rgba(0,0,0,0.2)] transition duration-[0.3s]'
@@ -155,6 +158,7 @@ const RestaurantMenu = () => {
                     </span>
                   </div>
                   <button
+                    data-testid='add-btn'
                     className='p-2 z-30'
                     onClick={() => handleAddItem(item?.card?.info)}
                   >

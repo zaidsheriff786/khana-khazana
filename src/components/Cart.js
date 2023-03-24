@@ -28,7 +28,7 @@ const Cart = () => {
           )}
         </div>
         {Object.keys(cartItems).length > 0 && (
-          <div className='flex flex-col'>
+          <div data-testid='cart-items' className='flex flex-col'>
             {Object.values(cartItems).map((item) => (
               <CartItems key={item.id} {...item} />
             ))}

@@ -2,7 +2,10 @@ const Shimmer = () => {
   return (
     <>
       <div className='w-full h-12 flex justify-center mt-4'></div>
-      <div className='flex flex-wrap justify-center max-w-[1200px] w-full my-0 mx-auto'>
+      <div
+        data-testid='shimmer'
+        className='flex flex-wrap justify-center max-w-[1200px] w-full my-0 mx-auto'
+      >
         {Array(15)
           .fill('')
           .map((item, index) => (

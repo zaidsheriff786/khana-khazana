@@ -41,7 +41,7 @@ const RestaurantMenu = () => {
         <div className='flex'>
           <img
             loading='lazy'
-            className='h-24 rounded-md mr-2 sm:h-[120px] sm:mr-0 lg:h-44 lg:mr-3'
+            className='w-[110px] rounded-md mr-2 sm:w-[190px] sm:mr-0 lg:w-[279px] lg:mr-3'
             src={IMG_CDN_URL + restaurantInfo?.cloudinaryImageId}
             alt='restaurant-img'
           />

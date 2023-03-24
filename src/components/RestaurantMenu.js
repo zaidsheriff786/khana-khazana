@@ -37,7 +37,7 @@ const RestaurantMenu = () => {
     <MenuShimmer />
   ) : (
     <div className='my-2 flex-1'>
-      <div className='w-full bg-gray-100  p-2 flex justify-center flex-wrap sm:justify-between sm:flex-nowrap sm:p-4 sm:sticky top-0 left-0 z-20 xl:justify-center'>
+      <div className='w-full bg-gray-100  p-1 flex justify-center flex-wrap sm:justify-between sm:flex-nowrap sm:p-4 sm:sticky top-0 left-0 z-20 xl:justify-center'>
         <div className='flex'>
           <img
             loading='lazy'

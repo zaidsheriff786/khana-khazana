@@ -4,8 +4,8 @@ const Error = () => {
   const err = useRouteError();
 
   return (
-    <div className='error'>
-      <img className='error-img' src={errorImage} alt='not found' />
+    <div className='h-full flex flex-col justify-center items-center'>
+      <img className='w-[500px]' src={errorImage} alt='not found' />
       <h1>Uh-oh!</h1>
       <h2>Something went wrong!!</h2>
       <h2>
